@@ -1,16 +1,36 @@
-# Mini SQL Engine
+# 🧠 Mini SQL Engine
 
-## Project Overview
-Mini SQL Engine is an in-memory Python-based SQL interpreter that supports basic `SELECT` queries, filtering with `WHERE`, and `COUNT()` aggregation.  
-It demonstrates how data is processed internally in a database and provides a hands-on understanding of parsing and execution logic.
+A lightweight **in-memory SQL interpreter** built in Python.  
+Supports basic SQL features like:
+
+✔️ `SELECT`  
+✔️ `WHERE` filters  
+✔️ Comparison operators  
+✔️ `COUNT()` aggregation  
+✔️ Loading CSV files using `LOAD <table>`  
+
+This project demonstrates how SQL queries are parsed and executed internally.
 
 ---
 
-## Setup Instructions
-1. Python 3.10+ required.
-2. Clone the repository:
-   ```bash
-   git clone https://github.com/LALITHA-14/mini-sql-engine
+## 🚀 Project Overview
+Mini SQL Engine is a simple SQL interpreter that loads CSV files into memory and executes basic SQL queries.  
+It is designed for understanding:
+
+- How SQL parsing works  
+- How filtering and projections are applied  
+- How aggregation functions are evaluated  
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1️⃣ Requirements
+- Python **3.10+**
+
+### 2️⃣ Clone the repository
+```bash
+git clone https://github.com/LALITHA-14/mini-sql-engine
    ```
 3. Navigate to the project folder:
     cd mini-sql-engine
@@ -22,7 +42,101 @@ It demonstrates how data is processed internally in a database and provides a ha
     LOAD customers
     SELECT * FROM customers
 
-## Outputs of SQL Queries for employees.csv
+### 📘 SQL Grammar Supported
+➤ 1. LOAD Command
+LOAD <table_name>
+
+
+Loads <table_name>.csv from the project folder
+
+Only filenames (without extension) are allowed
+
+Example:
+
+LOAD employees
+
+➤ 2. SELECT Statement
+SELECT <columns> FROM <table_name> [WHERE <condition>]
+
+Columns:
+
+*
+
+Single column: name
+
+Multiple columns (commas allowed with or without spaces):
+
+SELECT name, age
+SELECT name,age
+
+Case-insensitivity:
+
+select, SELECT, SeLeCt → all valid
+
+WHERE condition is also case-insensitive
+
+➤ 3. WHERE Conditions
+
+Supported operators:
+
+Operator	Meaning
+=	Equal
+!=	Not equal
+>	Greater than
+<	Less than
+>=	Greater or equal
+<=	Less or equal
+
+Examples:
+
+age >= 30
+department = 'HR'
+salary != 50000
+
+➤ 4. Aggregation
+
+Supported:
+
+COUNT(*)
+COUNT(column)
+
+
+Example:
+
+SELECT COUNT(*) FROM employees
+SELECT COUNT(salary) FROM employees WHERE department = 'Engineering'
+
+### 📂 Project Structure
+mini-sql-engine/
+│
+│── cli.py                      # Interactive SQL command-line interface
+│── engine.py                   # Core SQL execution engine
+│── parser.py                   # SQL query parser
+│── utils.py                    # Helper functions
+│── README.md                   # Project documentation
+│── query_outputs_employees.csv # Stored example outputs
+│── query_outputs_customers.csv # Stored example outputs
+│
+├── sample_data/                # Sample CSV datasets
+│     ├── customers.csv
+│     └── employees.csv
+│
+├── tests/                      # Unit tests for parser & engine
+│     ├── test_engine.py
+│     ├── test_parser.py
+│     ├── cli.py
+│     ├── engine.py
+│     ├── parser.py
+│     ├── utils.py
+│     └── __init__.py
+│
+└── __pycache__/                # Auto-generated compiled Python files
+      ├── engine.cpython-314.pyc
+      ├── parser.cpython-314.pyc
+      └── utils.cpython-314.pyc
+### 📊 Sample Query Outputs
+🔹 employees.csv
+
 **Query:** `LOAD customers`
 **Output:**
 ```
@@ -135,7 +249,7 @@ Error: 'Column not found in table: xyz'
 Error: [Errno 2] No such file or directory: 'unknown_table.csv'
 
 
-## Outputs of SQL Queries for customers.csv
+🔹 customers.csv
 **Query:** `LOAD customers`
 **Output:**
 ```
