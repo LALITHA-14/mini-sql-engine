@@ -31,13 +31,13 @@ Loaded: 5 rows.
 
 **Query:** `SELECT * FROM employees`
 **Output:**
-| id | name    | age | department  | salary | email               |
-| -- | ------- | --- | ----------- | ------ | -----------------   |  
+| id | name    | age | department  | salary | email                 |
+| -- | ------- | --- | ----------- | ------ | -----------------     |  
 | 1  | Alice   | 30  | Engineering | 90000  | `alice@example.com`   |
-| 2  | Bob     | 24  | Sales       | 45000  | bob@example.com     |
-| 3  | Charlie | 29  | Engineering | 87000  | charlie@example.com |
-| 4  | Diana   | 35  | HR          | 60000  | diana@example.com   |
-| 5  | Elon    | 40  | Management  | 150000 | elon@example.com    |
+| 2  | Bob     | 24  | Sales       | 45000  | `bob@example.com`     |
+| 3  | Charlie | 29  | Engineering | 87000  | `charlie@example.com` |
+| 4  | Diana   | 35  | HR          | 60000  | `diana@example.com`   |
+| 5  | Elon    | 40  | Management  | 150000 | `elon@example.com`    |
 
 
 **Query:** `SELECT name, salary FROM employees`
@@ -144,13 +144,13 @@ Loaded: 5 rows.
 
 **Query:** `SELECT * FROM customers`
 **Output:**
-| id | name  | age | country | purchases | email             |
-| -- | ----- | --- | ------- | --------- | ------------------|
-| 1  | John  | 28  | USA     | 5         | john@example.com  |
-| 2  | Mary  | 35  | UK      | 12        | mary@example.com  |
-| 3  | Steve | 40  | USA     | 8         | steve@example.com |
-| 4  | Linda | 22  | Canada  | 3         | linda@example.com |
-| 5  | Emma  | 30  | USA     | 7         | emma@example.com  |
+| id | name  | age | country | purchases | email               |
+| -- | ----- | --- | ------- | --------- | ------------------  |
+| 1  | John  | 28  | USA     | 5         | `john@example.com`  |
+| 2  | Mary  | 35  | UK      | 12        | `mary@example.com`  |
+| 3  | Steve | 40  | USA     | 8         | `steve@example.com` |
+| 4  | Linda | 22  | Canada  | 3         | `linda@example.com` |
+| 5  | Emma  | 30  | USA     | 7         | `emma@example.com`  |
 
 
 **Query:** `SELECT name, country FROM customers WHERE purchases > 5`
