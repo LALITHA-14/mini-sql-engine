@@ -107,7 +107,7 @@ SELECT COUNT(*) FROM employees
 SELECT COUNT(salary) FROM employees WHERE department = 'Engineering'
 
 ### 📂 Project Structure
-mini-sql-engine/
+``` mini-sql-engine/
 │
 │── cli.py                      # Interactive SQL command-line interface
 │── engine.py                   # Core SQL execution engine
@@ -134,6 +134,7 @@ mini-sql-engine/
       ├── engine.cpython-314.pyc
       ├── parser.cpython-314.pyc
       └── utils.cpython-314.pyc
+```
 ### 📊 Sample Query Outputs
 🔹 employees.csv
 
