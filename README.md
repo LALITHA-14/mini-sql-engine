@@ -33,7 +33,7 @@ Loaded: 5 rows.
 **Output:**
 | id | name    | age | department  | salary | email               |
 | -- | ------- | --- | ----------- | ------ | -----------------   |  
-| 1  | Alice   | 30  | Engineering | 90000  | [alice@example.com]   |
+| 1  | Alice   | 30  | Engineering | 90000  | alice@example.com   |
 | 2  | Bob     | 24  | Sales       | 45000  | bob@example.com     |
 | 3  | Charlie | 29  | Engineering | 87000  | charlie@example.com |
 | 4  | Diana   | 35  | HR          | 60000  | diana@example.com   |
