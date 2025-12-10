@@ -1,0 +1,27 @@
+Query,Output
+LOAD customers,"Loaded: 5 rows."
+SELECT * FROM customers
+﻿id | name  | age | country | purchases | email
+----+-------+-----+---------+-----------+------------------
+1   | John  | 28  | USA     | 5         | john@example.com
+2   | Mary  | 35  | UK      | 12        | mary@example.com
+3   | Steve | 40  | USA     | 8         | steve@example.com
+4   | Linda | 22  | Canada  | 3         | linda@example.com
+5   | Emma  | 30  | USA     | 7         | emma@example.com
+
+sql> SELECT name, country FROM customers WHERE purchases > 5
+name  | country
+------+--------
+Mary  | UK
+Steve | USA
+Emma  | USA
+
+sql>  SELECT COUNT(*) FROM customers
+count
+-----
+5
+
+sql> SELECT COUNT(purchases) FROM customers WHERE country = 'USA'
+count
+-----
+3

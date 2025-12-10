@@ -1,0 +1,79 @@
+Query,Output
+LOAD employees,"Loaded: 5 rows."
+SELECT * FROM employees
+id | name    | age | department  | salary | email
+---+---------+-----+-------------+--------+--------------------
+1  | Alice   | 30  | Engineering | 90000  | alice@example.com
+2  | Bob     | 24  | Sales       | 45000  | bob@example.com
+3  | Charlie | 29  | Engineering | 87000  | charlie@example.com
+4  | Diana   | 35  | HR          | 60000  | diana@example.com
+5  | Elon    | 40  | Management  | 150000 | elon@example.com
+
+sql> SELECT name, salary FROM employees
+name    | salary
+--------+-------
+Alice   | 90000
+Bob     | 45000
+Charlie | 87000
+Diana   | 60000
+Elon    | 150000
+
+sql> SELECT name FROM employees WHERE department = 'HR'
+name
+-----
+Diana
+
+sql> SELECT name, age FROM employees WHERE salary > 60000
+name    | age
+--------+----
+Alice   | 30
+Charlie | 29
+Elon    | 40
+
+sql> SELECT name FROM employees WHERE age >= 30
+name
+-----
+Alice
+Diana
+Elon
+
+sql> SELECT name FROM employees WHERE age <= 30
+name
+-------
+Alice
+Bob
+Charlie
+
+sql> SELECT name FROM employees WHERE department != 'Engineering'
+name
+-----
+Bob
+Diana
+Elon
+
+sql> SELECT COUNT(*) FROM employees
+count
+-----
+5
+
+sql> SELECT COUNT(salary) FROM employees
+count
+-----
+5
+
+sql> SELECT COUNT(salary) FROM employees WHERE department = 'Engineering'
+count
+-----
+2
+
+sql> SELECT salary FROM employees WHERE salary >= 90000
+salary
+------
+90000
+150000
+
+sql> SELECT xyz FROM employees
+Error: 'Column not found in table: xyz'
+
+sql> SELECT name FROM unknown_table
+Error: [Errno 2] No such file or directory: 'unknown_table.csv'
