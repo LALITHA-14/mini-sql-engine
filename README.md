@@ -22,6 +22,7 @@ It demonstrates how data is processed internally in a database and provides a ha
     SELECT * FROM customers
 
 ## Outputs of SQL Queries for employees.csv
+Outputs of SQL Queries for employees.csv
 Query: LOAD employees
 Output:
 Loaded: 5 rows.
